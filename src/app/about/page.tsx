@@ -1,6 +1,8 @@
 'use client';
 
 import Image from 'next/image';
+import Counter from '@/components/ui/counter';
+import Link from 'next/link';
 
 export default function AboutPage() {
   return (
@@ -29,13 +31,13 @@ export default function AboutPage() {
         <div className="space-y-4">
           <h2 className="text-2xl font-medium">Meet the Founder</h2>
           <p className="text-gray-700 leading-relaxed">
-            Michael Cabrera's journey started at 13 on a red Raleigh bike delivering newspapers — unknowingly launching a lifetime of entrepreneurship. With 20+ years in healthcare leadership, he’s scaled companies with a disciplined framework: People, Strategy, Execution, and Cash.
+            Michael Cabrera’s entrepreneurial journey began at age 13 on a red Raleigh bicycle, delivering newspapers. That early hustle evolved into two decades of leadership in healthcare, where he’s scaled national companies using a clear operational framework: People, Strategy, Execution, and Cash.
           </p>
           <p className="text-gray-700 leading-relaxed">
-            A graduate of MIT’s Entrepreneurial Masters Program, he built a radiology startup with 1,236% growth — eventually acquired by a public company. But more than business metrics, Michael leads with empathy, builds resilient teams, and integrates purpose with profit.
+            As a graduate of MIT’s Entrepreneurial Masters Program, Michael built a radiology startup that grew 1,236% before being acquired by a public company. But beyond the numbers, he’s known for leading with empathy, cultivating resilient teams, and merging purpose with performance.
           </p>
           <p className="text-gray-700 leading-relaxed">
-            Through employee-led philanthropy, he’s aligned company culture with causes like Cystic Fibrosis and Autism. Recognized by Inc. Magazine and the South Florida Business Journal, Michael remains grounded in mentorship and mission.
+            His values extend beyond business. Through employee-led philanthropy, he championed causes like Cystic Fibrosis and Autism. Recognized by Inc. Magazine and the South Florida Business Journal, Michael continues to mentor rising leaders while staying anchored in mission.
           </p>
           <blockquote className="border-l-4 border-[#E6C378] pl-4 italic text-gray-600 text-lg mt-4">
             “Healthcare is personal. Let’s treat it that way — with clarity, compassion, and urgency.”
@@ -73,32 +75,56 @@ export default function AboutPage() {
           <div className="bg-[#f9f9f6] p-6 rounded-xl border shadow-sm hover:shadow-md transition">
             <h3 className="text-lg font-semibold text-[#003087] mb-2">Our Mission</h3>
             <p className="text-sm text-gray-700">
-              To transform access to high-quality medical imaging through transparency, empathy, and innovation — empowering patients and providers with a better path to care.
+              To radically improve access to affordable, high-quality medical imaging — with transparency, empathy, and innovation at the core of every interaction.
             </p>
           </div>
           <div className="bg-[#f9f9f6] p-6 rounded-xl border shadow-sm hover:shadow-md transition">
             <h3 className="text-lg font-semibold text-[#003087] mb-2">Our Vision</h3>
             <p className="text-sm text-gray-700">
-              A future where every patient receives timely, affordable, and trusted imaging — guided by a human-first healthcare experience that prioritizes clarity and compassion.
+              A future where no patient delays care due to confusion, cost, or access — and where imaging centers thrive by aligning around shared values.
             </p>
           </div>
           <div className="bg-[#f9f9f6] p-6 rounded-xl border shadow-sm hover:shadow-md transition">
             <h3 className="text-lg font-semibold text-[#003087] mb-2">Our Promise</h3>
             <p className="text-sm text-gray-700">
-              We promise to treat every patient like family, ensure fair and transparent pricing, and never compromise on quality, dignity, or care.
+              We treat every patient like family, offer honest pricing, and champion a care experience grounded in dignity, trust, and results.
             </p>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Animated Impact Number */}
+      <section className="text-center pt-12 animate-fade-in-scroll delay-[400ms]">
+        <Counter title="Procedures Performed Nationwide" end={400000} suffix="+" />
+        <p className="text-gray-600 mt-4 mb-6 text-sm">
+          From launch to acquisition, we served over 400,000 imaging procedures — one scan, one story at a time.
+        </p>
+      </section>
+
+      {/* Why Centers Partner */}
+      <section className="space-y-6 text-center animate-fade-in-scroll delay-[450ms]">
+        <h2 className="text-2xl font-medium">Why Centers Partner with USRadiology</h2>
+        <p className="text-gray-700 max-w-3xl mx-auto">
+          Imaging centers join USRadiology to unlock volume, operational simplicity, and mission-aligned growth. We send ready-to-schedule, self-pay patients directly to your door — no middlemen, no platform fees.
+        </p>
+        <p className="text-gray-700 max-w-3xl mx-auto">
+          With streamlined workflows, digital scheduling, and full transparency, we remove the friction so centers can focus on what they do best: delivering exceptional imaging care.
+        </p>
+      </section>
+
+      {/* Final Call to Action */}
       <section className="text-center pt-12 animate-fade-in-scroll delay-[500ms]">
         <h3 className="text-xl font-semibold">Join us in changing healthcare for good.</h3>
-        <p className="text-gray-600 mt-2 mb-4">Learn more, partner with us, or get the care you deserve today.</p>
-        <button className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
-          Contact Us
-        </button>
+        <p className="text-gray-600 mt-2 mb-4">
+          Whether you're a center ready to grow or a patient seeking clarity — we're here to connect you to care that works.
+        </p>
+        <Link href="/contact" passHref legacyBehavior>
+          <a className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+            Contact Us
+          </a>
+        </Link>
       </section>
+
     </div>
   );
 }

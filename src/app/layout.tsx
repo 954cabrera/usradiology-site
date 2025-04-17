@@ -96,7 +96,8 @@ export default function RootLayout({
             <Link href="/model" className="text-white/90 hover:text-[#E6C378] transition">Our Model</Link>
             <a href="#pricing" className="text-white/90 hover:text-[#E6C378] transition">Pricing</a>
             <a href="#locations" className="text-white/90 hover:text-[#E6C378] transition">Locations</a>
-            <a href="#about" className="text-white/90 hover:text-[#E6C378] transition">About Us</a>
+            <Link href="/about" className="text-white/90 hover:text-[#E6C378] transition">About</Link>
+
           </nav>
 
         </header>
