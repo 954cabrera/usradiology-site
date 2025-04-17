@@ -3,21 +3,34 @@
 import Image from 'next/image';
 import Counter from '@/components/ui/counter';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function AboutPage() {
   return (
     <div className="bg-white text-gray-800 px-6 py-16 max-w-5xl mx-auto space-y-20">
 
       {/* Hero */}
-      <section className="space-y-6 text-center animate-fade-in-scroll">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="space-y-6 text-center"
+      >
         <h1 className="text-4xl font-semibold">About USRadiology</h1>
         <p className="text-lg text-gray-600">
           We're building a new kind of healthcare — one that puts people first. Rooted in empathy, backed by expertise, and powered by purpose.
         </p>
-      </section>
+      </motion.section>
 
       {/* Founder */}
-      <section className="flex flex-col md:flex-row items-center gap-8 animate-fade-in-scroll delay-[100ms]">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true }}
+        className="flex flex-col md:flex-row items-center gap-8"
+      >
         <div className="relative w-48 h-48 rounded-full overflow-hidden border border-gray-300 shadow-md ring-1 ring-white group shrink-0">
           <Image
             src="/images/michael.jpg"
@@ -43,10 +56,16 @@ export default function AboutPage() {
             “Healthcare is personal. Let’s treat it that way — with clarity, compassion, and urgency.”
           </blockquote>
         </div>
-      </section>
+      </motion.section>
 
       {/* Recognition */}
-      <section className="bg-[#f9f9f6] border border-gray-200 rounded-xl p-6 shadow-sm space-y-4 animate-fade-in-scroll delay-[200ms]">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="bg-[#f9f9f6] border border-gray-200 rounded-xl p-6 shadow-sm space-y-4"
+      >
         <h3 className="text-xl font-semibold text-gray-800">Highlights & Recognition</h3>
         <ul className="list-disc list-inside text-sm text-gray-700 space-y-2">
           <li>🏆 Entrepreneur of the Year – South Florida Business Journal</li>
@@ -66,10 +85,16 @@ export default function AboutPage() {
             Download Press Kit
           </a>
         </div>
-      </section>
+      </motion.section>
 
       {/* Mission, Vision, Promise */}
-      <section className="space-y-6 animate-fade-in-scroll delay-[300ms]">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        viewport={{ once: true }}
+        className="space-y-6"
+      >
         <h2 className="text-2xl font-medium text-center">Our Mission, Vision & Promise</h2>
         <div className="grid md:grid-cols-3 gap-6 mt-6">
           <div className="bg-[#f9f9f6] p-6 rounded-xl border shadow-sm hover:shadow-md transition">
@@ -91,18 +116,30 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Animated Impact Number */}
-      <section className="text-center pt-12 animate-fade-in-scroll delay-[400ms]">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        viewport={{ once: true }}
+        className="text-center pt-12"
+      >
         <Counter title="Procedures Performed Nationwide" end={400000} suffix="+" />
         <p className="text-gray-600 mt-4 mb-6 text-sm">
           From launch to acquisition, we served over 400,000 imaging procedures — one scan, one story at a time.
         </p>
-      </section>
+      </motion.section>
 
       {/* Why Centers Partner */}
-      <section className="space-y-6 text-center animate-fade-in-scroll delay-[450ms]">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.45 }}
+        viewport={{ once: true }}
+        className="space-y-6 text-center"
+      >
         <h2 className="text-2xl font-medium">Why Centers Partner with USRadiology</h2>
         <p className="text-gray-700 max-w-3xl mx-auto">
           Imaging centers join USRadiology to unlock volume, operational simplicity, and mission-aligned growth. We send ready-to-schedule, self-pay patients directly to your door — no middlemen, no platform fees.
@@ -110,10 +147,16 @@ export default function AboutPage() {
         <p className="text-gray-700 max-w-3xl mx-auto">
           With streamlined workflows, digital scheduling, and full transparency, we remove the friction so centers can focus on what they do best: delivering exceptional imaging care.
         </p>
-      </section>
+      </motion.section>
 
       {/* Final Call to Action */}
-      <section className="text-center pt-12 animate-fade-in-scroll delay-[500ms]">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+        viewport={{ once: true }}
+        className="text-center pt-12"
+      >
         <h3 className="text-xl font-semibold">Join us in changing healthcare for good.</h3>
         <p className="text-gray-600 mt-2 mb-4">
           Whether you're a center ready to grow or a patient seeking clarity — we're here to connect you to care that works.
@@ -123,7 +166,7 @@ export default function AboutPage() {
             Contact Us
           </a>
         </Link>
-      </section>
+      </motion.section>
 
     </div>
   );
